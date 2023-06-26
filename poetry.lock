@@ -224,6 +224,20 @@ files = [
 ]
 
 [[package]]
+name = "patterns"
+version = "0.1.0"
+description = ""
+category = "main"
+optional = false
+python-versions = "^3.11"
+files = []
+develop = true
+
+[package.source]
+type = "directory"
+url = "patterns"
+
+[[package]]
 name = "platformdirs"
 version = "3.8.0"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
@@ -517,4 +531,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "5c2a5fab3bc207038847b06a5ebcdb1e2e85f624f2073c46cb0c12f7adf66d2c"
+content-hash = "7f41a47abcb344a9ed1e703a74914a45fdb776f87f32261ef217594e59192be5"

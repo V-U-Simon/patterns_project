@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "patterns"
+name = "patterns_project"
 version = "0.1.0"
 description = ""
 authors = ["V-U-Simon <V-U-Simon@yandex.ru>"]
@@ -7,6 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+patterns = {path = "patterns", develop = true}
 
 
 [tool.poetry.group.dev.dependencies]
@@ -15,6 +16,10 @@ yapf = "^0.40.1"
 isort = "^5.12.0"
 autoflake = "^2.2.0"
 djlint = "^1.31.0"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.0"
 
 [build-system]
 requires = ["poetry-core"]
