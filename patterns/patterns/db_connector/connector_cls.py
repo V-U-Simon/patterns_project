@@ -2,14 +2,16 @@ import sqlite3
 from types import TracebackType
 from typing import Optional, Type
 
+from patterns.query_object import query_raw
+
 
 class SqliteConnector:
 
     def __init__(self, db_file: str = ':memory:'):
         self.db_file = db_file
 
-        self.connection: sqlite3.Connection
-        self.cursor: sqlite3.Cursor
+        self.connection: Optional[sqlite3.Connection] = None
+        self.cursor: Optional[sqlite3.Cursor] = None
 
     def connect(self):
         try:
@@ -22,7 +24,9 @@ class SqliteConnector:
     def close(self):
         if self.connection:
             self.cursor.close()
+            self.cursor = None
             self.connection.close()
+            self.connection = None
             print("SQLite connection is closed")
 
     def __enter__(self):
