@@ -2,8 +2,6 @@ import sqlite3
 from types import TracebackType
 from typing import Optional, Type
 
-from patterns.query_object import query_raw
-
 
 class SqliteConnector:
 

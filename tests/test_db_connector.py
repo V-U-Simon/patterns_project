@@ -1,4 +1,5 @@
 import pytest
+
 from patterns.db_connector import connector_cls
 from patterns.query_object import query_raw
 
