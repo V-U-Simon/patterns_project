@@ -14,7 +14,7 @@ class QueryBase:
         return ''.join(self._lines())
 
     def oneline(self) -> str:
-        return str(q).replace('\t', '').replace('\n', ' ').strip()
+        return str(self).replace('\t', '').replace('\n', ' ').strip()
 
 
 class Query(QueryBase):
