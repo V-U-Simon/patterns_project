@@ -1,4 +1,4 @@
-from .model import *
+from patterns.domain_model.model import *
 
 if __name__ == "__main__":
     mike = User(name='Mike')
@@ -8,31 +8,36 @@ if __name__ == "__main__":
 
     project = Project(name='Site Developing', owner=mike)
 
-    # userhood creating Role object
-    project.add_role('Director', 1)
-    project.add_role('Developer',)
-    project.add_role('DevOps', 1)
-    project.add_role('Designer', 2)
+    project.include(john)
+    project.include(sara)
 
-    # roles
-    roles: list[Role] = project.roles
-    role: Role = project.get_role
+    print(project)
+    print(project.memberships)
+    # # userhood creating Role object
+    # project.add_role('Director', 1)
+    # project.add_role('Developer',)
+    # project.add_role('DevOps', 1)
+    # project.add_role('Designer', 2)
 
-    # without role
-    project.invite(mike, john)
-    project.application(snow)  # send to project admins
+    # # roles
+    # roles: list[Role] = project.roles
+    # role: Role = project.get_role
 
-    # with role
-    project.role(sara, role)
-    project.role(sara, None)
-    project.role(sara)
+    # # without role
+    # project.invite(mike, john)
+    # project.application(snow)  # send to project admins
 
-    # membership
-    users: list[Membership] = project.memberships
+    # # with role
+    # project.role(sara, role)
+    # project.role(sara, None)
+    # project.role(sara)
 
-    member: Membership = project.get_member(sara)
+    # # membership
+    # users: list[Membership] = project.memberships
 
-    is_member(project, user)
+    # member: Membership = project.get_member(sara)
 
-    #
-    project = projects.find(name='Site Developing')
+    # is_member(project, user)
+
+    # #
+    # project = projects.find(name='Site Developing')
